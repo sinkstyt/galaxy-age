@@ -38,12 +38,52 @@ describe("Age", () => {
   test("should return the age in Mars years with its decimal component removed when Martian days have been calculated", () => {
     newAge.convertToMars();
     expect(newsAge.mars).toEqual(23);
+  });
+
+  test("should a Jupiter years age converted from Earth age", () => {
+    newAge.convertToJupiter();
+    expect(newAge.jupiter).toEqual(3.79);
+  });
+
+  test("should return the decimal component, if any, from Jupiter years age converted to Jupiter days", () => {
+    newAge.convertToJupiterDays();
+    expect(newAge.jupiterDays).toEqual(8402);
+  });
+
+  test("should return the age in Jupiter years with its decimal component removed when Jupiter days have been calculated", () => {
+    newAge.convertToJupiterDays();
+    expect(newsAge.jupiter).toEqual(3);
+  });
+
+  test("should return the global average (mean) for years of life expected", () => {
+    newAge.calcLifeExpectance();
+    expect(newAge.lifeExpect).toEqual(73);
+  });
+
+  test("should return lifeExpect value increased by 7 when person is from first world country but NOT in the Americas", () => {
+    newAge.firstWorldNotAmericas = true;
+    newAge.calcLifeExpectance();
+    expect(newAge.lifeExpect).toEqual(80);
+  });
+
+  test("should return lifeExpect value decreased by 10 when African country is indicated", () => {
+    newAge.fromAfrica = true;
+    newAge.calcLifeExpectance();
+    expect(newAge.lifeExpect).toEqual(80);
+  });
+
+  test("should return lifeExpect value increased by 6 when country in the Americas is indicated", () => {
+    newAge.fromAmericas = true;
+    newAge.calcLifeExpectance();
+    expect(newAge.lifeExpect).toEqual(79);
+  });
+
+  test("should return lifeExpect value increased by 2 when sex female is indicated", () => {
+    newAge.fromAmericas = true;
+    newAge.isFemale = true;
+    expect(newAge.lifeExpect).toEqual(81);
   })
-
-  test()
-
-  test("should ")
-
+  
   // test("should correctly assign a health key with a value of 100", () => {
   //   expect(newPlayer.health).toEqual(100);
   // });
