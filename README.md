@@ -65,20 +65,37 @@ _last major revision 7 February, 2021_
 | should return a number that is the mean life expectancy in Earth years worldwide                   | new Age(45)           | newAge.lifeExpect = 73 Earth years|
 |                                                                                                    |                       |                                   |
 |                                                Test                                                |         Input         |         Output                    |
-| should return a number that accurately adjusts Earth years life expectancy up by 7 years           | new Age(45)           | newAge.lifeExpect = 80 Earth years|
-| to be applied to users who mark they are from a first world country NOT in the Americas            |                       |                                   | 
+| should return a number that accurately adjusts Earth years life expectancy up by 7 years           | new Age(45)           |                                   |
+| to be applied to users who mark they are from a first world country NOT in the Americas         | newAge.firstWorld = true | newAge.lifeExpect = 80 Earth years| 
 |                                                                                                    |                       |                                   |
 |                                                Test                                                |         Input         |         Output                    |
 | should return a number that accurately adjusts Earth years life expectancy down by 10 years        | new Age(45)           |                                   |
-| to be applied to users who mark they are from an African country                   | newAge.region = "any African country" |newAge.lifeExpect = 63 Earth years | 
+| to be applied to users who mark they are from an African country                              | newAge.isFromAfrica = true |newAge.lifeExpect = 63 Earth years | 
 |                                                                                                    |                       |                                   |
 |                                                Test                                                |         Input         |         Output                    |
 | should return a number that accurately adjusts Earth years life expectancy up by 6 years           | new Age(45)           |                                   |
-| to be applied to users who mark they are from a country in North or South America | newAge.region = "any country in Americas" |newAge.lifeExpect = 79 Earth years| 
+| to be applied to users who mark they are from a country in North or South America           | newAge.isFromAmericas = true | newAge.lifeExpect = 79 Earth years| 
 |                                                                                                    |                       |                                   |
 |                                                Test                                                |         Input         |         Output                    |
-| should return a number that accurately adjusts Earth years life expectancy up by 2 years | newAge.region = "any country in Americas" | newAge.lifeExpect = 7 Earth years|
-| to be applied to users who mark sex = female                                                   | newAge.sex = "female"  |    newAge.lifeExpect = 81 years      | 
+| should return a number that accurately adjusts Earth years life expectancy up by 2 years | newAge.region = "any country in Americas" |                         |
+| to be applied to users who mark sex = female                                                       | newAge.sex = "female" | newAge.lifeExpect = 81 years      | 
+|                                                                                                    |                       |                                   |
+|                                        **Describe: calcYearsLeft()**                               |         Input         |         Output                    |
+|                                                Test                                                | new Age(45)           |                                   |
+| should return a number in Mercury years that finds the difference between current Mercury years    | newAge.calcLifeExpectance() |                             |
+| age and Mercury years life expectancy  (no sex or region data provided, thus EarthExpected = 73)   | newAge.calcYearsLeft("mercury") | newAge.mercuryLeft = (116.18) |
+|                                                                                                    |                       |                                   |
+|                                                Test                                                | new Age(45)           |                                   |
+| should return a number in Venus years that is the difference between current Venus years      | newAge.calcLifeExpectance() |                                  |
+| age and Venus years life expectancy  (no sex or region data provided, thus EarthExpected = 73)     | newAge.calcYearsLeft("venus") | newAge.venusLeft = (116.18) |
+|                                                                                                    |                       |                                   |
+|                                                Test                                                | new Age(45)           |                                   |
+| should return a number in Mars years that is the difference between current Mars years             | newAge.calcLifeExpectance() |                             |
+| age and Mars years life expectancy  (no sex or region data provided, thus EarthExpected = 73)      | newAge.calcYearsLeft("mars") | newAge.marsLeft = (14.87)  |
+|                                                                                                    |                       |                                   |
+|                                                Test                                                | new Age(45)           |                                   |
+| should return a number in Jupiter years that is the difference between current Jupiter years age   | newAge.calcLifeExpectance() |                             |
+| and Jupiter years life expectancy  (no sex or region data provided, thus EarthExpected = 73)   | newAge.calcYearsLeft("jupiter") | newAge.jupiterLeft = (6.15)   |
 
 
 ## **Installation Instructions to Setup This Project on Your Machine**
