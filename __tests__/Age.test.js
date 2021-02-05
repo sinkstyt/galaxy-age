@@ -11,6 +11,10 @@ describe("Age", () => {
     expect(newAge.earthYearsAge).toEqual(45);
   });
 
+  test("should correctly instantiate an Age object with name key set to the passed in name value", () => {
+    expect(newAge.name).toEqual("Andrea");
+  })
+
   // test("should correctly assign a health key with a value of 100", () => {
   //   expect(newPlayer.health).toEqual(100);
   // });
