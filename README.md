@@ -51,7 +51,7 @@ _last major revision 7 February, 2021_
 |                                                                                                    |                       |                                   |
 |                                                Test                                                |         Input         |         Output                    |
 | should return a number that accurately converts age in Earth years to age in Mars years and Mars days | new Age(45)        | newAge.mars = 23.91 Mars years    |
-| (1 Mars day = 24 hours and 40 minutes. Thus Mars days WILL be considered when converting age)      |  new Age(45)          | newAge.mars = 23 Martian years and 608 Martian days | 
+| (1 Mars day = 24 hours and 40 minutes. Thus Mars days WILL be considered when converting age)      |  new Age(45) | newAge.mars = 23 Martian years and 608 Martian days |
 | (conversion used: 1 Mars year = 687 Earth days; 1 Mars day = 24 Earth hours and 40 minutes)        |                       |                                   |
 |                                                                                                    |                       |                                   |
 |                                     **Describe: convertToJupiter()**                               |                       |                                   |

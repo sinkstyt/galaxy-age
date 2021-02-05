@@ -13,7 +13,36 @@ describe("Age", () => {
 
   test("should correctly instantiate an Age object with name key set to the passed in name value", () => {
     expect(newAge.name).toEqual("Andrea");
+  });
+
+  test("should return a Mercury years age converted from Earth age", () => {
+    newAge.convertToMercury();
+    expect(newAge.mercury).toEqual(186.71);
+  });
+
+  test("should return a Venus years age converted from Earth age", () => {
+    newAge.convertToVenus();
+    expect(newAge.venus).toEqual(73.11)
   })
+
+  test("should return a Mars years age converted from Earth age", () => {
+    newAge.convertToMars();
+    expect(newAge.mars).toEqual(23.91);
+  })
+
+  test("should return the decimal component, if any, from Mars years age converted to Martian days", () => {
+    newAge.convertToMarsDays();
+    expect(newAge.marsDays).toEqual(608);
+  });
+
+  test("should return the age in Mars years with its decimal component removed when Martian days have been calculated", () => {
+    newAge.convertToMars();
+    expect(newsAge.mars).toEqual(23);
+  })
+
+  test()
+
+  test("should ")
 
   // test("should correctly assign a health key with a value of 100", () => {
   //   expect(newPlayer.health).toEqual(100);
