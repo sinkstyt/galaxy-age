@@ -20,10 +20,10 @@ describe("Age", () => {
     expect(newAge.mercury).toEqual(186.71);
   });
 
-  // test("should return a Venus years age converted from Earth age", () => {
-  //   newAge.convertToVenus();
-  //   expect(newAge.venus).toEqual(73.11)
-  // })
+  test("should return a Venus years age converted from Earth age", () => {
+    newAge.convertToVenus();
+    expect(newAge.venus).toEqual(73.11)
+  })
 
   // test("should return a Mars years age converted from Earth age", () => {
   //   newAge.convertToMars();

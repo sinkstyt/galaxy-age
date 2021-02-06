@@ -8,6 +8,10 @@ export default class Age{
     this.mercury = this.roundToNearestHundredth(this.earthYearsAge * 365 / 87.969);
   }
 
+  convertToVenus() {
+    
+  }
+
   roundToNearestHundredth(inputNum) {
     let returnNum = inputNum *100;
     returnNum = Math.round(returnNum) / 100;
