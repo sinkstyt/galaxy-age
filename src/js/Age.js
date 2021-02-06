@@ -9,7 +9,7 @@ export default class Age{
   }
 
   convertToVenus() {
-    
+    this.venus = this.roundToNearestHundredth(this.earthYearsAge * 365 / 224.65);
   }
 
   roundToNearestHundredth(inputNum) {
