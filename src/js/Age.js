@@ -10,7 +10,7 @@ export default class Age{
 
   roundToNearestHundredth(inputNum) {
     let returnNum = inputNum *100;
-    // returnNum = Math.round(returnNum) / 100;
+    returnNum = Math.round(returnNum) / 100;
     return returnNum;
   }
 }
