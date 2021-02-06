@@ -25,10 +25,10 @@ describe("Age", () => {
     expect(newAge.venus).toEqual(73.11)
   })
 
-  // test("should return a Mars years age converted from Earth age", () => {
-  //   newAge.convertToMars();
-  //   expect(newAge.mars).toEqual(23.91);
-  // })
+  test("should return a Mars years age converted from Earth age", () => {
+    newAge.convertToMars();
+    expect(newAge.mars).toEqual(23.91);
+  })
 
   // test("should return the decimal component, if any, from Mars years age converted to Martian days", () => {
   //   newAge.convertToMarsDays();

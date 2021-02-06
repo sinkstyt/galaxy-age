@@ -12,6 +12,10 @@ export default class Age{
     this.venus = this.roundToNearestHundredth(this.earthYearsAge * 365 / 224.65);
   }
 
+  convertToMars() {
+    
+  }
+
   roundToNearestHundredth(inputNum) {
     let returnNum = inputNum *100;
     returnNum = Math.round(returnNum) / 100;
