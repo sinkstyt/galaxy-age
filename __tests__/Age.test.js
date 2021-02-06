@@ -30,10 +30,10 @@ describe("Age", () => {
     expect(newAge.mars).toEqual(23.91);
   })
 
-  // test("should return the decimal component, if any, from Mars years age converted to Martian days", () => {
-  //   newAge.convertToMarsDays();
-  //   expect(newAge.marsDays).toEqual(608);
-  // });
+  test("should return the decimal component, if any, from Mars years age converted to Martian days", () => {
+    newAge.convertToMarsDays();
+    expect(newAge.marsDays).toEqual(608);
+  });
 
   // test("should return the age in Mars years with its decimal component removed when Martian days have been calculated", () => {
   //   newAge.convertToMars();

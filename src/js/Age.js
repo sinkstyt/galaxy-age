@@ -16,6 +16,10 @@ export default class Age{
     this.mars = this.roundToNearestHundredth(this.earthYearsAge * 365 / 687);
   }
 
+  convertToMarsDays() {
+    
+  }
+
   roundToNearestHundredth(inputNum) {
     let returnNum = inputNum *100;
     returnNum = Math.round(returnNum) / 100;
