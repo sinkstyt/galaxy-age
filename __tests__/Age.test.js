@@ -106,8 +106,8 @@ describe("Age", () => {
   //   expect(newAge.jupiterLeft).toEqual(6.15);
   // });
 
-  // test("should return a number that has more than two digits after its dot rounded to the nearest hundredth", () => {
-  //   const roundedNum = newAge.roundToNearestHundredth(41.96549);
-  //   expect(roundedNum).toEqual(41.97);
-  // });
+  test("should return a number that has more than two digits after its dot rounded to the nearest hundredth", () => {
+    const roundedNum = newAge.roundToNearestHundredth(41.96549);
+    expect(roundedNum).toEqual(41.97);
+  });
 });
