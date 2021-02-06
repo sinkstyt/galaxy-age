@@ -13,7 +13,7 @@ export default class Age{
   }
 
   convertToMars() {
-    
+    this.mars = this.roundToNearestHundredth(this.earthYearsAge * 365 / 687);
   }
 
   roundToNearestHundredth(inputNum) {
