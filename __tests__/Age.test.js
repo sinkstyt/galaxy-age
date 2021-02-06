@@ -83,67 +83,31 @@ describe("Age", () => {
     newAge.isFemale = true;
     expect(newAge.lifeExpect).toEqual(81);
   })
+
+  test("should return the difference in Mercury years between Mercury life expectancy and current age in Mercury years", () => {
+    newAge.calcLifeExpectance();
+    newAge.calcYearsLeft("mercury");
+    expect(newAge.mercuryLeft).toEqual(116.81);
+  });
+
+  test("should return the difference in Venus years between Venus life expectancy and current age in Venus years", () => {
+    newAge.calcLifeExpectance();
+    newAge.calcYearsLeft("venus");
+    expect(newAge.venusLeft).toEqual(116.81);
+  });
   
-  // test("should correctly assign a health key with a value of 100", () => {
-  //   expect(newPlayer.health).toEqual(100);
-  // });
-  
-  // test("should correctly assign strength with a value of 0", () => {
-  //   expect(newPlayer.strength).toEqual(0);
-  // });
+  test("should return the difference in Mars years between Mars life expectancy and current age in Mars years", () => {
+    newAge.calcLifeExpectance();
+    expect(newAge.marsLeft).toEqual(14.87);
+  });
 
-  // test("should correctly assign attackAccuracy with a value of 0", () => {
-  //   expect(newPlayer.accuracy).toEqual(0);
-  // });
+  test("should return the difference in Jupiter years between Jupiter life expectancy and current age in Jupiter years", () => {
+    newAge.calcLifeExpectance();
+    expect(newAge.jupiterLeft).toEqual(6.15);
+  });
 
-  // test("should return a number greater than or equal to the first parameter", () => {
-  //   expect(newPlayer.randomRoll(1, 10)).toBeGreaterThanOrEqual(1);
-  // });
-
-  // test("should return a number less than or equal to the second parameter", () => {
-  //   expect(newPlayer.randomRoll(1, 10)).toBeLessThanOrEqual(10);
-  // });
-
-  // test("should correctly return the amount of damage applied given a weapon as an argument", () => {
-  //   expect(newPlayer.attackDamage(halberd)).toBeGreaterThanOrEqual(10);
-  //   expect(newPlayer.attackDamage(halberd)).toBeLessThanOrEqual(40);
-  // });
-
-  // test("should correctly return a value used to check accuracy given a weapon as an argument", () => {
-  //   expect(newPlayer.attackAccuracy(sword)).toBeGreaterThanOrEqual(15);
-  //   expect(newPlayer.attackAccuracy(sword)).toBeLessThanOrEqual(100);
-  // });
-
-  // test("should return a boolean", () => {
-  //   expect(typeof newPlayer.isHit(bullseye)).toEqual("boolean");
-  // });
-
-  // test("should return true if the number is greater than 80", () => {
-  //   expect(newPlayer.isHit(bullseye)).toEqual(true);
-  // });
-
-  // test("should return an instance of Player with a 'level' key assigned the value 0", () => {
-  //   expect(newPlayer.level).toEqual(0);
-  // });
-
-  // test("should allow method levelUp to increase strength by 1", () => {
-  //   newPlayer.levelUp();
-  //   expect(newPlayer.strength).toEqual(1);
-  // })
-
-  // test("should allow method levelUp to increase health by 10", () => {
-  //   newPlayer.levelUp();
-  //   expect(newPlayer.health).toEqual(110);
-  // })
-
-  //   test("should increment accuracy on Player instance by 1", () => {
-  //   newPlayer.levelUp();
-  //   expect(newPlayer.accuracy).toEqual(1);
-  //   })
-
-  //   test("should return an instance of Player with keys 'xp' and 'xpToLevel' assigned 0 and 100 respectively", () => {
-  //     expect(newPlayer.xp).toEqual(0);
-  //     expect(newPlayer.xpToLevel).toEqual(100);
-  //   })
-
+  test("should return a number that has more than two digits after its dot rounded to the nearest hundredth", () => {
+    const roundedNum = newAge.roundToNearestHundredth(41.96549);
+    expect(roundedNum).toEqual(41.97);
+  });
 });

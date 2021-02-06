@@ -40,7 +40,7 @@ _last major revision 7 February, 2021_
 |                                 **Describe: convertToVenus())**                                    |                       |                                   |
 |                                                Test                                                |         Input         |         Output                    |
 | should return a number that accurately converts age in Earth years to age in Venus years           | new Age(45)           | newAge.venus = 73.11 Venus years  |
-| (since the ratio of one Venus day to one Venus year is 243 Earth days:224.65 Earth days, Venus days are ignored) |         |                                   | 
+| (since the ratio of one Venus days to one Venus years is 3 to 2, Venus days are ignored)           |                       |                                   | 
 | (conversion used: 1 Venus year = 224.65 Earth days)                                                |                       |                                   |
 |                                                                                                    |                       |                                   |
 |                                        **Describe: convertToMars()**                               |                       |                                   
@@ -87,7 +87,7 @@ _last major revision 7 February, 2021_
 |                                                                                                    |                       |                                   |
 |                                                Test                                                | new Age(45)           |                                   |
 | should return a number in Venus years that is the difference between current Venus years      | newAge.calcLifeExpectance() |                                  |
-| age and Venus years life expectancy  (no sex or region data provided, thus EarthExpected = 73)     | newAge.calcYearsLeft("venus") | newAge.venusLeft = (116.18) |
+| age and Venus years life expectancy  (no sex or region data provided, thus EarthExpected = 73)     | newAge.calcYearsLeft("venus") | newAge.venusLeft = (45.50) |
 |                                                                                                    |                       |                                   |
 |                                                Test                                                | new Age(45)           |                                   |
 | should return a number in Mars years that is the difference between current Mars years             | newAge.calcLifeExpectance() |                             |
@@ -95,7 +95,12 @@ _last major revision 7 February, 2021_
 |                                                                                                    |                       |                                   |
 |                                                Test                                                | new Age(45)           |                                   |
 | should return a number in Jupiter years that is the difference between current Jupiter years age   | newAge.calcLifeExpectance() |                             |
-| and Jupiter years life expectancy  (no sex or region data provided, thus EarthExpected = 73)   | newAge.calcYearsLeft("jupiter") | newAge.jupiterLeft = (6.15)   |
+| and Jupiter years life expectancy  (no sex or region data provided, thus EarthExpected = 73)  | newAge.calcYearsLeft("jupiter") | newAge.jupiterLeft = (6.15)  |
+|                                                                                                    |                       |                                   |
+|                                  **Describe: roundToNearestHundredth()**                           |                       |                                   |
+|                                                Test                                                | new Age(45)           |                                   |
+| should return a number that has more than two digits after its dot rounded to the nearest  | roundToNearestHundredth(41.96549) |  41.97                        |
+| hundredth.                                                                                         |                       |                                   |
 
 
 ## **Installation Instructions to Setup This Project on Your Machine**
@@ -116,7 +121,7 @@ YOUR_COMPUTER/Users/yourUserName/rpg-folder $ git clone https://github.com/sinks
 * _Any known issues_
 * _should go here_
 
-#### References &mdash; sources for measurements of other Solar System planets' year-lengths
+## References &mdash; sources for measurements of other Solar System planets' year-lengths
 1. https://www.universetoday.com/14334/how-long-is-a-year-on-mercury-1/
 2. https://www.worldatlas.com/articles/how-long-is-a-day-and-year-on-venus.html
 3. https://mars.nasa.gov/resources/21392/mars-in-a-minute-how-long-is-a-year-on-mars/
