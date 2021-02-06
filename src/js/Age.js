@@ -4,5 +4,7 @@ export default class Age{
     this.name = name;
   }
 
-
+  convertToMercury() {
+    
+  }
 }
