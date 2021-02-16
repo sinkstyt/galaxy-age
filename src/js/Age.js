@@ -36,6 +36,12 @@ export default class Age{
     }
   }
 
+  calcLifeExpectBySex() {
+    if (this.sex === "female") {
+      this.lifeExpect += 2;
+    }
+  }
+
   roundToNearestHundredth(inputNum) {
     let returnNum = inputNum *100;
     returnNum = Math.round(returnNum) / 100;
