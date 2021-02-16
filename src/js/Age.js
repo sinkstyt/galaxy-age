@@ -28,7 +28,7 @@ export default class Age{
   calcLifeExpectance() {
     this.lifeExpect = 73;
     if (this.region === "first world" && this.region !== "Americas") {
-      // this.lifeExpect += 7;
+      this.lifeExpect += 7;
     }
   }
 
