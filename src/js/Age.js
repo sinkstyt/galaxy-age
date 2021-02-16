@@ -24,7 +24,7 @@ export default class Age{
   }
 
   calcLifeExpectance() {
-    // this.lifeExpect = 73;
+    this.lifeExpect = 73;
   }
 
   roundToNearestHundredth(inputNum) {
