@@ -26,35 +26,15 @@ describe("Age", () => {
     expect(newAge.mars).toEqual(23.91);
   })
 
-  // test("should return the decimal component, if any, from Mars years age converted to Martian days", () => {
-  //   newAge.convertToMarsDays();
-  //   expect(newAge.marsDays).toEqual(608);
-  // });
-
-  // test("should return the age in Mars years with its decimal component removed when Martian days have been calculated", () => {
-  //   newAge.convertToMars();
-  //   expect(newsAge.mars).toEqual(23);
-  // });
-
   test("should a Jupiter years age converted from Earth age", () => {
     newAge.convertToJupiter();
     expect(newAge.jupiter).toEqual(3.79);
   });
 
-  // test("should return the decimal component, if any, from Jupiter years age converted to Jupiter days", () => {
-  //   newAge.convertToJupiterDays();
-  //   expect(newAge.jupiterDays).toEqual(8402);
-  // });
-
-  // test("should return the age in Jupiter years with its decimal component removed when Jupiter days have been calculated", () => {
-  //   newAge.convertToJupiterDays();
-  //   expect(newsAge.jupiter).toEqual(3);
-  // });
-
-  // test("should return the global average (mean) for years of life expected", () => {
-  //   newAge.calcLifeExpectance();
-  //   expect(newAge.lifeExpect).toEqual(73);
-  // });
+  test("should return the global average (mean) for years of life expected", () => {
+    newAge.calcLifeExpectance();
+    expect(newAge.lifeExpect).toEqual(73);
+  });
 
   // test("should return lifeExpect value increased by 7 when person is from first world country but NOT in the Americas", () => {
   //   newAge.firstWorldNotAmericas = true;

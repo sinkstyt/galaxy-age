@@ -22,8 +22,10 @@ export default class Age{
   convertToJupiter() {
     this.jupiter = this.roundToNearestHundredth(this.earthYearsAge / 11.8618);
   }
-  // Jupiter takes 11.8618 Earth years to complete a single orbit of the Sun. In other words, a single Jovian year lasts the equivalent of 4,332.59 Earth days.
 
+  calcLifeExpectance() {
+    // this.lifeExpect = 73;
+  }
 
   roundToNearestHundredth(inputNum) {
     let returnNum = inputNum *100;
