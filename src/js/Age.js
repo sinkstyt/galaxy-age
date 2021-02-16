@@ -32,7 +32,7 @@ export default class Age{
     } else if (this.region === "Africa") {
       this.lifeExpect -= 10;
     } else if (this.region === "Americas") {
-      // this.lifeExpect += 6;
+      this.lifeExpect += 6;
     }
   }
 
