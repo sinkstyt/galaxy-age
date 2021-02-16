@@ -42,11 +42,11 @@ describe("Age", () => {
     expect(newAge.lifeExpect).toEqual(80);
   });
 
-  // test("should return lifeExpect value decreased by 10 when African country is indicated", () => {
-  //   newAge.fromAfrica = true;
-  //   newAge.calcLifeExpectance();
-  //   expect(newAge.lifeExpect).toEqual(80);
-  // });
+  test("should return lifeExpect value decreased by 10 when African country is indicated", () => {
+    newAge.fromAfrica = true;
+    newAge.calcLifeExpectance();
+    expect(newAge.lifeExpect).toEqual(80);
+  });
 
   // test("should return lifeExpect value increased by 6 when country in the Americas is indicated", () => {
   //   newAge.fromAmericas = true;
