@@ -5,6 +5,8 @@ export default class Age{
     this.venus = 0;
     this.mars = 0;
     this.jupiter = 0;
+    this.sex = '';
+    this.region = '';
   }
 
   convertToMercury() {
@@ -25,6 +27,9 @@ export default class Age{
 
   calcLifeExpectance() {
     this.lifeExpect = 73;
+    if (this.region === "first world" && this.region !== "Americas") {
+      // this.lifeExpect += 7;
+    }
   }
 
   roundToNearestHundredth(inputNum) {
