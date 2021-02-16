@@ -4,15 +4,11 @@ describe("Age", () => {
   let newAge;
 
   beforeEach(() => {
-    newAge = new Age(45, "Andrea");
+    newAge = new Age(45);
   });
     
   test("should correctly instantiate an Age object with earthYearsAge set equal to the interger passed in", () => {
     expect(newAge.earthYearsAge).toEqual(45);
-  });
-
-  test("should correctly instantiate an Age object with name key set to the passed in name value", () => {
-    expect(newAge.name).toEqual("Andrea");
   });
 
   test("should return a Mercury years age converted from Earth age", () => {
@@ -30,20 +26,20 @@ describe("Age", () => {
     expect(newAge.mars).toEqual(23.91);
   })
 
-  test("should return the decimal component, if any, from Mars years age converted to Martian days", () => {
-    newAge.convertToMarsDays();
-    expect(newAge.marsDays).toEqual(608);
-  });
+  // test("should return the decimal component, if any, from Mars years age converted to Martian days", () => {
+  //   newAge.convertToMarsDays();
+  //   expect(newAge.marsDays).toEqual(608);
+  // });
 
   // test("should return the age in Mars years with its decimal component removed when Martian days have been calculated", () => {
   //   newAge.convertToMars();
   //   expect(newsAge.mars).toEqual(23);
   // });
 
-  // test("should a Jupiter years age converted from Earth age", () => {
-  //   newAge.convertToJupiter();
-  //   expect(newAge.jupiter).toEqual(3.79);
-  // });
+  test("should a Jupiter years age converted from Earth age", () => {
+    newAge.convertToJupiter();
+    expect(newAge.jupiter).toEqual(3.79);
+  });
 
   // test("should return the decimal component, if any, from Jupiter years age converted to Jupiter days", () => {
   //   newAge.convertToJupiterDays();
