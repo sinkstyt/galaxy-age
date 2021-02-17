@@ -1,5 +1,5 @@
 {
-  "name": "Galactic-Calc",
+  "name": "galactic-calc",
   "version": "1.0.0",
   "description": "determines age were a person to be on a different planet in the Solar System",
   "main": "main.js",
