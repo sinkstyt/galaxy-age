@@ -63,10 +63,12 @@ export default class Age{
       this.venusLeft = venusExpect - this.venus;
       break;
     case "mars":
-      // marsExpect = this.roundToNearestHundredth(this.lifeExpect * 365 / 687);
-      // this.marsLeft = marsExpect - this.mars;
+      this.convertToMars();
+      marsExpect = this.lifeExpect * 365 / 687;
+      this.marsLeft = this.roundToNearestHundredth(marsExpect - this.mars);
       break;
     case "jupiter":
+      // this.convertToJupiter();
       // jupiterExpect = this.roundToNearestHundredth(this.lifeExpect * 365 / 11.8618);
       // this.jupiterLeft = jupiterExpect - this.jupiter;
       break;
