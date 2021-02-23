@@ -99,6 +99,8 @@ export default class Age{
       case "jupiter":
         this.yearsBeyond -= this.jupiterLeft;
         break;
+      default:
+        return "please enter an all-lowercase planet name";
       }
     }
   }
