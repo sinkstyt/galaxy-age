@@ -8,6 +8,7 @@ export default class Age{
     this.sex = '';
     this.region = '';
     this.lifeExpect = 73;
+    this.yearsBeyond = 0;
   }
 
   convertToMercury() {
@@ -81,5 +82,12 @@ export default class Age{
     let returnNum = inputNum *100;
     returnNum = Math.round(returnNum) / 100;
     return returnNum;
+  }
+
+  outlasterCheck(planet) {
+    if (`this.${planet}Left` < 0) {
+      this.yearsBeyond -= `this.${planet}Left`;
+    }
+    return this.yearsBeyond;
   }
 }

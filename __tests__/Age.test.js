@@ -2,9 +2,11 @@ import Age from '../src/js/Age.js';
 
 describe("Age", () => {
   let newAge;
+  let centenarian;
 
   beforeEach(() => {
     newAge = new Age(45);
+    centenarian = new Age(100);
   });
     
   test("should correctly instantiate an Age object with earthYearsAge set equal to the interger passed in", () => {
@@ -90,5 +92,11 @@ describe("Age", () => {
     expect(roundedNum).toEqual(41.97);
   });
 
-
+  test("should return a positive number (the absolute value) of the difference between a planet's life expectancy and this same planet's current age", () => {
+    centenarian = new Age(100);
+    centenarian.calcLifeExpectance();
+    centenarian.calcYearsLeft("jupiter");
+    centenarian.outlasterCheck("jupiter");
+    expect(centenarian.yearsBeyond).toEqual(2.28);
+  });
 });
