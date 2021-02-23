@@ -70,7 +70,7 @@ describe("Age", () => {
   test("should return the difference in Venus years between Venus life expectancy and current age in Venus years", () => {
     newAge.calcLifeExpectance();
     newAge.calcYearsLeft("venus");
-    expect(newAge.venusLeft).toEqual(45.49);
+    expect(newAge.venusLeft).toEqual(45.5);
   });
   
   // test("should return the difference in Mars years between Mars life expectancy and current age in Mars years", () => {
