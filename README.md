@@ -6,7 +6,8 @@ _ever wondered?_
 
 #### By _**Tyler Sinks**_
 _originally created 5 February, 2021_
-_last major revision 17 February, 2021_
+_major revision 17 February, 2021_
+_last major revision 22 February, 2021_
 
 ## Technologies Used
 * _html, css, javascript_
@@ -91,7 +92,6 @@ _last major revision 17 February, 2021_
 | should return a number that has more than two digits after its dot rounded to the nearest  | roundToNearestHundredth(41.96549) |  41.97                        |
 | hundredth.                                                                                         |                       |                                   |
 
-
 ## **Installation Instructions to Setup This Project on Your Machine**
 * Copy the following link to your clipboard: https://github.com/sinkstyt/galaxy-age.git
 * Open a Bash Terminal (some might call it a 'command line')
@@ -99,7 +99,7 @@ _last major revision 17 February, 2021_
 * Within your git bash terminal type in `$ git clone   ` with one space between "clone" and pasted clipboard contents (https://github.com/sinkstyt/galaxy-age.git)
 > at Terminal promt
 ```
-YOUR_COMPUTER/Users/yourUserName/rpg-folder $ git clone https://github.com/sinkstyt/galaxy-age.git
+users/YOUR_USERNAME/ $ git clone https://github.com/sinkstyt/galaxy-age.git
 ```
 * After the page has been cloned to your chosen directory, use `$ cd galaxy-age` to switch into its root folder.
 * Check to see that you have npm installed with the prompt `$ npm -v`. As long as the first number in the version is 3 or greater, you should not anticipate any problems. If you are using OS X or greater and npm is not installed, use the command `$ brew install node`
@@ -116,8 +116,7 @@ YOUR_COMPUTER/Users/yourUserName/rpg-folder $ git clone https://github.com/sinks
 
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+* _The user interface is not yet connected to the business logic_
 
 ## References &mdash; sources for measurements of other Solar System planets' year-lengths
 1. https://www.universetoday.com/14334/how-long-is-a-year-on-mercury-1/
@@ -129,4 +128,4 @@ YOUR_COMPUTER/Users/yourUserName/rpg-folder $ git clone https://github.com/sinks
 MIT 2.0
 
 ## Contact Information
-_Contact the author: tyler.sinks@gmail.com_
+_[Contact the author](mailto:tyler.sinks@gmail.com)_
