@@ -79,10 +79,10 @@ describe("Age", () => {
     expect(newAge.marsLeft).toEqual(14.87);
   });
 
-  // test("should return the difference in Jupiter years between Jupiter life expectancy and current age in Jupiter years", () => {
-  //   newAge.calcLifeExpectance();
-  //   expect(newAge.jupiterLeft).toEqual(6.15);
-  // });
+  test("should return the difference in Jupiter years between Jupiter life expectancy and current age in Jupiter years", () => {
+    newAge.calcLifeExpectance();
+    expect(newAge.jupiterLeft).toEqual(6.15);
+  });
 
   test("should return a number that has more than two digits after its dot rounded to the nearest hundredth", () => {
     const roundedNum = newAge.roundToNearestHundredth(41.96549);
