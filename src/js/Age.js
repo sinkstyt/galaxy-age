@@ -68,9 +68,9 @@ export default class Age{
       this.marsLeft = this.roundToNearestHundredth(marsExpect - this.mars);
       break;
     case "jupiter":
-      // this.convertToJupiter();
-      // jupiterExpect = this.roundToNearestHundredth(this.lifeExpect * 365 / 11.8618);
-      // this.jupiterLeft = jupiterExpect - this.jupiter;
+      this.convertToJupiter();
+      jupiterExpect = this.lifeExpect / 11.8618;
+      this.jupiterLeft = this.roundToNearestHundredth(jupiterExpect - this.jupiter);
       break;
     default:
       return "please enter a valid planet name using all lowercased letters";
