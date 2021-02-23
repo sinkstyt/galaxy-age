@@ -85,9 +85,21 @@ export default class Age{
   }
 
   outlasterCheck(planet) {
-    if (`this.${planet}Left` < 0) {
-      this.yearsBeyond -= `this.${planet}Left`;
+    if (this.jupiterLeft < 0 || this.mercuryLeft < 0 || this.venusLeft < 0 || this.marsLeft < 0 ) {
+      switch (planet) {
+      case "mercury":
+        this.yearsBeyond -= this.mercuryLeft;
+        break;
+      case "venus":
+        this.yearsBeyond -= this.venusLeft;
+        break;
+      case "mars":
+        this.yearsBeyond -= this.marsLeft;
+        break;
+      case "jupiter":
+        this.yearsBeyond -= this.jupiterLeft;
+        break;
+      }
     }
-    return this.yearsBeyond;
   }
 }
