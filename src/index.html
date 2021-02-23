@@ -17,6 +17,7 @@
     </ol>
   </div>
   <h2 class="planet-select">Select Planet</h2>
+  <small>Sorry, the technology for conversion to Saturn, Uranus, and Neptune years has not yet been assembled here.</small>
   <form class="planet-select">
     <div class="mercury-select">
       <input type="radio" name="planet-choice" id="merc" checked>
@@ -35,15 +36,15 @@
       <label for="jupi">Jupiter</label>
     </div>
     <div class="saturn-select">
-      <input type="radio" name="planet-choice" id="saturn">
+      <input type="radio" name="planet-choice" id="saturn" disabled>
       <label for="saturn">Saturn</label>
     </div>
     <div class="uranus-select">
-      <input type="radio" name="planet-choice" id="uran">
+      <input type="radio" name="planet-choice" id="uran" disabled>
       <label for="uran">Uranus</label>
     </div>
     <div class="neptune-select">
-      <input type="radio" name="planet-choice" id="nept">
+      <input type="radio" name="planet-choice" id="nept" disabled>
       <label for="nept">Neptune</label>
     </div>
     <div class="current-years">
@@ -54,5 +55,20 @@
       <button type="submit" class="btn btn-primary">Show My Adjusted Age</button>
     </div>
   </form>
+  <div class="results-output row">
+    <div class="col-md-4">
+      <h3>Current Age Conversions</h3>
+      <ul class="current-converted">
+
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <h3>Years You Can Expect to Live There</h3>
+      <p>*If you have already lived beyond your converted life expectancy, the amount of years beyond this life expectancy will be shown.</p>
+      <ul class="years-left">
+
+      </ul>
+    </div>
+  </div>
 </body>
 </html>

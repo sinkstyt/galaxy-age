@@ -62,17 +62,16 @@ describe("Age", () => {
     expect(newAge.lifeExpect).toEqual(81);
   });
 
-  // test("should return the difference in Mercury years between Mercury life expectancy and current age in Mercury years", () => {
-  //   newAge.calcLifeExpectance();
-  //   newAge.calcYearsLeft("mercury");
-  //   expect(newAge.mercuryLeft).toEqual(116.81);
-  // });
+  test("should return the difference in Mercury years between Mercury life expectancy and current age in Mercury years", () => {
+    newAge.calcYearsLeft(`mercury`);
+    expect(newAge.mercuryLeft).toEqual(116.18);
+  });
 
-  // test("should return the difference in Venus years between Venus life expectancy and current age in Venus years", () => {
-  //   newAge.calcLifeExpectance();
-  //   newAge.calcYearsLeft("venus");
-  //   expect(newAge.venusLeft).toEqual(116.81);
-  // });
+  test("should return the difference in Venus years between Venus life expectancy and current age in Venus years", () => {
+    newAge.calcLifeExpectance();
+    newAge.calcYearsLeft("venus");
+    expect(newAge.venusLeft).toEqual(45.49);
+  });
   
   // test("should return the difference in Mars years between Mars life expectancy and current age in Mars years", () => {
   //   newAge.calcLifeExpectance();

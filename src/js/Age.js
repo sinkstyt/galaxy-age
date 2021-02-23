@@ -7,6 +7,7 @@ export default class Age{
     this.jupiter = 0;
     this.sex = '';
     this.region = '';
+    this.lifeExpect = 73;
   }
 
   convertToMercury() {
@@ -26,7 +27,6 @@ export default class Age{
   }
 
   calcLifeExpectance() {
-    this.lifeExpect = 73;
     if (this.region === "first world" && this.region !== "Americas") {
       this.lifeExpect += 7;
     } else if (this.region === "Africa") {
@@ -39,6 +39,39 @@ export default class Age{
   calcLifeExpectBySex() {
     if (this.sex === "female") {
       this.lifeExpect += 2;
+    }
+  }
+
+  calcYearsLeft(planet) {
+    if (this.lifeExpect === 73) {
+      this.calcLifeExpectance();
+      this.calcLifeExpectBySex();
+    }
+    let mercuryExpect = 0;
+    let venusExpect = 0;
+    let marsExpect = 0;
+    let jupiterExpect = 0;
+    switch (planet) {
+    case "mercury":
+      this.convertToMercury();
+      mercuryExpect = this.lifeExpect * 365 / 87.969;
+      this.mercuryLeft = this.roundToNearestHundredth(mercuryExpect - this.mercury);
+      break;
+    case "venus":
+      // this.convertToVenus();
+      // venusExpect = this.roundToNearestHundredth(this.lifeExpect * 365 / 224.65);
+      // this.venusLeft = venusExpect - this.venus;
+      break;
+    case "mars":
+      // marsExpect = this.roundToNearestHundredth(this.lifeExpect * 365 / 687);
+      // this.marsLeft = marsExpect - this.mars;
+      break;
+    case "jupiter":
+      // jupiterExpect = this.roundToNearestHundredth(this.lifeExpect * 365 / 11.8618);
+      // this.jupiterLeft = jupiterExpect - this.jupiter;
+      break;
+    default:
+      return "please enter a valid planet name using all lowercased letters";
     }
   }
 
