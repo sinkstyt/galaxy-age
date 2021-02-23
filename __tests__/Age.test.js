@@ -73,10 +73,11 @@ describe("Age", () => {
     expect(newAge.venusLeft).toEqual(45.5);
   });
   
-  // test("should return the difference in Mars years between Mars life expectancy and current age in Mars years", () => {
-  //   newAge.calcLifeExpectance();
-  //   expect(newAge.marsLeft).toEqual(14.87);
-  // });
+  test("should return the difference in Mars years between Mars life expectancy and current age in Mars years", () => {
+    newAge.calcLifeExpectance();
+    newAge.calcYearsLeft("mars");
+    expect(newAge.marsLeft).toEqual(14.87);
+  });
 
   // test("should return the difference in Jupiter years between Jupiter life expectancy and current age in Jupiter years", () => {
   //   newAge.calcLifeExpectance();
