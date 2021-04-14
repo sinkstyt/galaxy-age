@@ -7,7 +7,7 @@ export default class Age{
     this.jupiter = 0;
     this.sex = '';
     this.region = '';
-    this.lifeExpect = 77;
+    this.lifeExpect = 73;
     this.yearsBeyond = 0;
     this.conversionFactor = {
       "mercury": 1 / 87.969, 
