@@ -78,17 +78,11 @@ describe("Age", () => {
     expect(newAge["Africa"]).toEqual(63);
   });
 
-//   test("should return lifeExpect value decreased by 10 when African country is indicated", () => {
-//     newAge.region = "Africa";
-//     newAge.calcLifeExpectance();
-//     expect(newAge.lifeExpect).toEqual(63);
-//   });
-
-//   test("should return lifeExpect value increased by 6 when country in the Americas is indicated", () => {
-//     newAge.region = "Americas";
-//     newAge.calcLifeExpectance();
-//     expect(newAge.lifeExpect).toEqual(79);
-//   });
+  test("should increase lifeExpect value by 6 when region equals Americas", () => {
+    newAge.region = "Americas";
+    newAge.calcLifeExpectance();
+    expect(newAge["Americas"]).toBe(79);
+  });
 
 //   test("should return lifeExpect value increased by 2 when sex female is indicated", () => {
 //     newAge.region = "Americas";
