@@ -9,8 +9,6 @@ describe("Age", () => {
     centenarian = new Age(100);
   });
     
-
-  // use other matchers besides .toEqual
   test("should correctly instantiate an Age object with earthYearsAge set equal to the interger passed in", () => {
     expect(newAge.earthYearsAge).toEqual(45);
   });
@@ -22,6 +20,12 @@ describe("Age", () => {
     expect(nonNumberAge.convertAll()).toBe("please enter age as a one, two, or three digit number");
   });
 
+  test("should return a string message reminding of valid input type if input Earth age included a decimal point", () => {
+    let decimalIncludedAge = new Age(10.5);
+    expect(decimalIncludedAge.convertAll()).toBe("please enter age as a one, two, or three digit number");
+  });
+
+// **********  use other matchers besides .toEqual ********
 //   test("should return a Mercury years age converted from Earth age", () => {
 //     newAge.convertToMercury();
 //     expect(newAge.mercury).toEqual(186.71);
