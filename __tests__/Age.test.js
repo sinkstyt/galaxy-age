@@ -52,10 +52,11 @@ describe("Age", () => {
     expect(newAge.mars).toBeLessThan(24);
   });
 
-//   test("should a Jupiter years age converted from Earth age", () => {
-//     newAge.convertToJupiter();
-//     expect(newAge.jupiter).toEqual(3.79);
-//   });
+  test("should accurately convert to Jupiter years from Earth age", () => {
+    newAge.convertAll();
+    expect(newAge.jupiter).toBeGreaterThan(3.6);
+    expect(newAge.jupiter).toBeLessThan(4);
+  });
 
 //   test("should return the global average (mean) for years of life expected", () => {
 //     newAge.calcLifeExpectance();
