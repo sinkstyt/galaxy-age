@@ -33,17 +33,18 @@ describe("Age", () => {
     expect(wishfulThinker.convertAll()).toBe("please enter your age in years");
   });
 
-//        **********  use other matchers besides .toEqual ********
   test("should accurately convert to Mars years from Earth age", () => {
     newAge.convertAll();
     expect(newAge.mercury).toBeGreaterThan(186);
     expect(newAge.mercury).toBeLessThan(187);
   });
 
-//   test("should return a Venus years age converted from Earth age", () => {
-//     newAge.convertToVenus();
-//     expect(newAge.venus).toEqual(73.11);
-//   })
+  //        **********  use other matchers besides .toEqual ********
+  test("should accurately convert to Venus years from Earth age", () => {
+    newAge.convertAll();
+    expect(newAge.venus).toBeGreaterThan(73);
+    expect(newAge.venus).toBeLessThan(74);
+  });
 
 //   test("should return a Mars years age converted from Earth age", () => {
 //     newAge.convertToMars();
