@@ -18,7 +18,7 @@ export default class Age{
     this.regionFactor = {
       "first world": 7,
       "Americas": 6,
-      "Africa": -10
+      "Africa": -20
     };
   }
 
