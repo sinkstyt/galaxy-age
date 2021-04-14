@@ -14,6 +14,11 @@ export default class Age{
       "venus": 1 / 224.65,
       "mars": 1 / 687,
       "jupiter": 1 / (11.8618 * 365),
+    },
+    this.regionFactor = {
+      "first world": 7,
+      "Americas": 6,
+      "Africa": -10
     };
   }
 
@@ -30,12 +35,10 @@ export default class Age{
   }
   
   calcLifeExpectance() {
-    if (this.region === "first world" && this.region !== "Americas") {
-      this.lifeExpect += 7;
-    } else if (this.region === "Africa") {
-      this.lifeExpect -= 10;
-    } else if (this.region === "Americas") {
-      this.lifeExpect += 6;
+    if (this.region !== '') {
+      for (const regionKey in this.regionFactor) {
+        this[regionKey] = Number(this.lifeExpect) + Number(this.regionFactor[regionKey]); 
+      }
     }
   }
 
