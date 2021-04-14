@@ -61,6 +61,11 @@ describe("Age", () => {
     expect(newAge.lifeExpect).toBeCloseTo(73);
   });
 
+  test("should return mean life expectancy unchanged if key `region` stores an empty string", () => {
+    newAge.calcLifeExpectance();
+    expect(newAge.lifeExpect).toBeCloseTo(73);
+  });
+
 //   test("should return lifeExpect value increased by 7 when person is from first world country but NOT in the Americas", () => {
 //     newAge.region = "first world";
 //     newAge.calcLifeExpectance();

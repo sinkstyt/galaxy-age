@@ -30,7 +30,9 @@ export default class Age{
   }
   
   calcLifeExpectance() {
-    if (this.region === "first world" && this.region !== "Americas") {
+    if (this.region == '') {
+      return this.lifeExpect = 899;
+    } else if (this.region === "first world" && this.region !== "Americas") {
       this.lifeExpect += 7;
     } else if (this.region === "Africa") {
       this.lifeExpect -= 10;
