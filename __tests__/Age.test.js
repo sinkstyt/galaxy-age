@@ -46,7 +46,7 @@ describe("Age", () => {
     expect(newAge.venus).toBeLessThan(74);
   });
 
-  test("should return a Mars years age converted from Earth age", () => {
+  test("should accurately convert to Mars years from Earth age", () => {
     newAge.convertAll();
     expect(newAge.mars).toBeGreaterThan(23);
     expect(newAge.mars).toBeLessThan(24);
