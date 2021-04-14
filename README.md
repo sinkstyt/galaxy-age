@@ -7,7 +7,8 @@ _ever wondered?_
 #### By _**Tyler Sinks**_
 _originally created 5 February, 2021_
 _major revision 17 February, 2021_
-_last major revisions 22-23 February, 2021_
+_major revision 22-23 February, 2021_
+_additional revision 14 April, 2021_
 
 ## Technologies Used
 * _html, css, javascript_
