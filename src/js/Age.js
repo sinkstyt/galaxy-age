@@ -9,8 +9,28 @@ export default class Age{
     this.region = '';
     this.lifeExpect = 73;
     this.yearsBeyond = 0;
+    this.conversionFactor = {
+      "mercury": 1 / 87.969, 
+      "venus": 1 / 224.65,
+      "mars": 1 / 687,
+      "jupiter": 1 / 11.8618,
+    };
   }
 
+  // Consider how you could create 1 class with only 2 methods that are able to calculate life expectancy and age on any planet based on the input to that method. Is this inherently better? It could be, and it always depends on your application’s design and its needs.
+  convertAll() {
+    // check for edge cases on Earth age input
+    if (typeof this.earthYearsAge !== "number") {
+      // return "please enter age as a one, two, or three digit number";
+      return "fail first";
+    }
+
+    // with just the Earth age input, make all conversion to Merc, Venus, Mars, and Jupiter ages
+
+    // with just Earth age input, make all conversions to other planets' life expectancies
+  }
+  
+  
   convertToMercury() {
     this.mercury = this.roundToNearestHundredth(this.earthYearsAge * 365 / 87.969);
   }
