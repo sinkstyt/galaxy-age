@@ -39,7 +39,6 @@ describe("Age", () => {
     expect(newAge.mercury).toBeLessThan(187);
   });
 
-  //        **********  use other matchers besides .toEqual ********
   test("should accurately convert to Venus years from Earth age", () => {
     newAge.convertAll();
     expect(newAge.venus).toBeGreaterThan(73);
@@ -58,10 +57,9 @@ describe("Age", () => {
     expect(newAge.jupiter).toBeLessThan(4);
   });
 
-//   test("should return the global average (mean) for years of life expected", () => {
-//     newAge.calcLifeExpectance();
-//     expect(newAge.lifeExpect).toEqual(73);
-//   });
+  test("should return the global mean life expectancy", () => {
+    expect(newAge.lifeExpect).toBeCloseTo(73);
+  });
 
 //   test("should return lifeExpect value increased by 7 when person is from first world country but NOT in the Americas", () => {
 //     newAge.region = "first world";
