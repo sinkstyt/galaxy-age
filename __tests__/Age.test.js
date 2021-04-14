@@ -13,8 +13,6 @@ describe("Age", () => {
     expect(newAge.earthYearsAge).toEqual(45);
   });
 
-  // edge cases: a negative number, a string, or submits an empty form. Think about edge cases like someone entering 0.1 as their age, or 9,000,000,000.
-
   test("should return a string message reminding of valid input type if input Earth age is a non-number type", () => {
     let nonNumberAge = new Age("fizz");
     expect(nonNumberAge.convertAll()).toBe("please enter age as a one, two, or three digit number");
@@ -23,6 +21,12 @@ describe("Age", () => {
   test("should return a string message reminding of valid input type if input Earth age included a decimal point", () => {
     let decimalIncludedAge = new Age(10.5);
     expect(decimalIncludedAge.convertAll()).toBe("please enter age as a one, two, or three digit number");
+  });
+
+  // edge cases: a negative number, a string, or submits an empty form. Think about edge cases like someone entering 0.1 as their age, or 9,000,000,000.
+  test("should return a string message reminding of valid input range if input Earth age is negative", () => {
+    let negAge = new Age(-353);
+    expect(negAge.convertAll()).toBe("please enter your age in years");
   });
 
 // **********  use other matchers besides .toEqual ********
