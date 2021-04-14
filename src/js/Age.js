@@ -41,7 +41,7 @@ export default class Age{
       }
     }
     if (this.sex === "female") {
-      this.lifeExpect += 7;
+      this.lifeExpect += 2;
     }
   }
 
