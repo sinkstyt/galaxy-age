@@ -84,13 +84,11 @@ describe("Age", () => {
     expect(newAge["Americas"]).toBe(79);
   });
 
-//   test("should return lifeExpect value increased by 2 when sex female is indicated", () => {
-//     newAge.region = "Americas";
-//     newAge.sex = "female";
-//     newAge.calcLifeExpectance();
-//     newAge.calcLifeExpectBySex();
-//     expect(newAge.lifeExpect).toEqual(81);
-//   });
+  test("should increase lifeExpect by 2 when sex equals female", () => {
+    newAge.sex = "female";
+    newAge.calcLifeExpectance();
+    expect(newAge.lifeExpect).toBe(75);
+  });
 
 //   test("should return the difference in Mercury years between Mercury life expectancy and current age in Mercury years", () => {
 //     newAge.calcYearsLeft(`mercury`);

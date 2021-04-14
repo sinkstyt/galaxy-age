@@ -40,6 +40,9 @@ export default class Age{
         this[regionKey] = Number(this.lifeExpect) + Number(this.regionFactor[regionKey]); 
       }
     }
+    if (this.sex === "female") {
+      this.lifeExpect += 7;
+    }
   }
 
   calcLifeExpectBySex() {
