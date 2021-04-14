@@ -28,17 +28,17 @@ describe("Age", () => {
     expect(negAge.convertAll()).toBe("please enter your age in years");
   });
 
-  // edge cases: a negative number, a string, or submits an empty form. Think about edge cases like someone entering 0.1 as their age, or 9,000,000,000.
   test("should return a string message reminding of valid input range if input Earth age is greater than 130", () => {
     let wishfulThinker = new Age(9000000000);
     expect(wishfulThinker.convertAll()).toBe("please enter your age in years");
   });
-  
-// **********  use other matchers besides .toEqual ********
-//   test("should return a Mercury years age converted from Earth age", () => {
-//     newAge.convertToMercury();
-//     expect(newAge.mercury).toEqual(186.71);
-//   });
+
+//        **********  use other matchers besides .toEqual ********
+  test("should accurately convert to Mars years from Earth age", () => {
+    newAge.convertAll();
+    expect(newAge.mercury).toBeGreaterThan(186);
+    expect(newAge.mercury).toBeLessThan(187);
+  });
 
 //   test("should return a Venus years age converted from Earth age", () => {
 //     newAge.convertToVenus();
