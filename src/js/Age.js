@@ -12,7 +12,8 @@ export default class Age{
     this.conversionFactor = {
       "mercury": 1 / 87.969, 
       "venus": 1 / 224.65,
-      "mars": 1 / 687,
+      // "mars": 1 / 687,
+      "mars": -11,
       "jupiter": 1 / 11.8618,
     };
   }
@@ -30,19 +31,6 @@ export default class Age{
     }
 
     // with just Earth age input, make all conversions to other planets' life expectancies
-  }
-  
-  
-  convertToMercury() {
-    this.mercury = this.roundToNearestHundredth(this.earthYearsAge * 365 / 87.969);
-  }
-
-  convertToVenus() {
-    this.venus = this.roundToNearestHundredth(this.earthYearsAge * 365 / 224.65);
-  }
-
-  convertToMars() {
-    this.mars = this.roundToNearestHundredth(this.earthYearsAge * 365 / 687);
   }
 
   convertToJupiter() {
