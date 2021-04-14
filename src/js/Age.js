@@ -22,6 +22,8 @@ export default class Age{
     // check for edge cases on Earth age input
     if (typeof this.earthYearsAge !== "number" || !Number.isInteger(this.earthYearsAge)) {
       return "please enter age as a one, two, or three digit number";
+    } else if (this.earthYearsAge < 0) {
+      return "please enter your age in years";
     }
 
     // with just the Earth age input, make all conversion to Merc, Venus, Mars, and Jupiter ages
