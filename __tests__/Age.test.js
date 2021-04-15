@@ -90,6 +90,14 @@ describe("Age", () => {
     expect(newAge.lifeExpect).toBe(75);
   });
 
+  test("should accurately convert life expectancy to Mercury years", () => {
+    newAge.sex = "female"; // should add 2 years to life expectancy
+    newAge.region = "Americas"; // should add 6 years to life expectancy
+    newAge.calcLifeExpectance(); // this.lifeExpect expected to be 81 after this call. Mercury's expectancy should now be about 336.0843024
+    expect(newAge.expectancies["mercury"]).toBeGreaterThan(336);
+    expect(newAge.expectancies["mercury"]).toBeLessThan(336.8);
+  });
+
 //   test("should return the difference in Mercury years between Mercury life expectancy and current age in Mercury years", () => {
 //     newAge.calcYearsLeft(`mercury`);
 //     expect(newAge.mercuryLeft).toEqual(116.18);

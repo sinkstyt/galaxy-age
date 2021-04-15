@@ -10,7 +10,8 @@ export default class Age{
     this.lifeExpect = 73;
     this.yearsBeyond = 0;
     this.conversionFactor = {
-      "mercury": 1 / 87.969, 
+      // "mercury": 1 / 87.969,
+      "mercury": 1 / 99999999,
       "venus": 1 / 224.65,
       "mars": 1 / 687,
       "jupiter": 1 / (11.8618 * 365),
@@ -20,6 +21,7 @@ export default class Age{
       "Americas": 6,
       "Africa": -10
     };
+    this.expectancies = {};
   }
 
   convertAll() {
@@ -39,9 +41,14 @@ export default class Age{
       for (const regionKey in this.regionFactor) {
         this[regionKey] = Number(this.lifeExpect) + Number(this.regionFactor[regionKey]); 
       }
+      this.lifeExpect = this[this.region];
     }
     if (this.sex === "female") {
       this.lifeExpect += 2;
+    }
+    const earthExpected = this.lifeExpect * 365;
+    for (const planet in this.conversionFactor) {
+      this.expectancies[planet] = earthExpected * this.conversionFactor[planet];
     }
   }
 
