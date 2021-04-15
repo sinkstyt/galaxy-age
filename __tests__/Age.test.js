@@ -116,16 +116,9 @@ describe("Age", () => {
     expect(newAge.expectancies["jupiter"]).toBeLessThan(5.35);
   });
 
-//   test("should return a number that has more than two digits after its dot rounded to the nearest hundredth", () => {
-//     const roundedNum = newAge.roundToNearestHundredth(41.96549);
-//     expect(roundedNum).toEqual(41.97);
-//   });
-
-//   test("should return a positive number (the absolute value) of the difference between a planet's life expectancy and this same planet's current age", () => {
-//     centenarian = new Age(100);
-//     centenarian.calcLifeExpectance();
-//     centenarian.calcYearsLeft("jupiter");
-//     centenarian.outlasterCheck("jupiter");
-//     expect(centenarian.yearsBeyond).toEqual(2.28);
-//   });
+  test("should determine the difference between current age in Earth years and life expectancy and store at key `yearsBeyond`", () => {
+    centenarian.convertAll();
+    centenarian.calcLifeExpectance();
+    expect(centenarian.yearsBeyond).toBeCloseTo(-27);
+  });
 });

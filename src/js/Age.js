@@ -49,12 +49,7 @@ export default class Age{
     for (const planet in this.conversionFactor) {
       this.expectancies[planet] = earthExpected * this.conversionFactor[planet];
     }
-  }
-
-  calcLifeExpectBySex() {
-    if (this.sex === "female") {
-      this.lifeExpect += 2;
-    }
+    this.yearsBeyond = this.lifeExpect - this.earthYearsAge * 2;
   }
 
   calcYearsLeft(planet) {
