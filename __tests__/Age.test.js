@@ -121,4 +121,10 @@ describe("Age", () => {
     centenarian.calcLifeExpectance();
     expect(centenarian.yearsBeyond).toBeCloseTo(-27);
   });
+
+  test("should determine the difference between current Mercury years age and expectancy in Mercury years", () => {
+    centenarian.convertAll();
+    centenarian.calcLifeExpectance();
+    expect(centenarian.expects["mercury"]).toBeCloseTo(-112.03);
+  });
 });
