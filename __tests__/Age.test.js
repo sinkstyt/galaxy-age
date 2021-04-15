@@ -103,11 +103,11 @@ describe("Age", () => {
     expect(newAge.expectancies["venus"]).toBeCloseTo(118.61);
   });
   
-//   test("should return the difference in Mars years between Mars life expectancy and current age in Mars years", () => {
-//     newAge.calcLifeExpectance();
-//     newAge.calcYearsLeft("mars");
-//     expect(newAge.marsLeft).toEqual(14.87);
-//   });
+  test("should accurately convert life expectancy to Mars years", () => {
+    newAge.calcLifeExpectance();
+    expect(newAge.expectancies["mars"]).toBeGreaterThan(38.5);
+    expect(newAge.expectancies["mars"]).toBeLessThan(39);
+  });
 
 //   test("should return the difference in Jupiter years between Jupiter life expectancy and current age in Jupiter years", () => {
 //     newAge.calcLifeExpectance();
