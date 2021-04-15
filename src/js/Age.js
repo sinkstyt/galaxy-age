@@ -13,7 +13,8 @@ export default class Age{
     this.conversionFactor = {
       "mercury": 1 / 87.969,
       "venus": 1 / 224.65,
-      "mars": 1 / 687,
+      // "mars": 1 / 687,
+      "mars": 1 / 87,
       "jupiter": 1 / (11.8618 * 365),
     },
     this.regionFactor = {

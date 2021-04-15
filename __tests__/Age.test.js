@@ -133,4 +133,12 @@ describe("Age", () => {
     newAge.calcLifeExpectance();
     expect(newAge.expects["venus"]).toBeCloseTo(45.49);
   });
+
+  test("should determine the difference between current age and expectancy in Mars years", () => {
+    newAge.region = "Americas";
+    newAge.sex = "female";
+    newAge.convertAll();
+    newAge.calcLifeExpectance(); // +6 Americas +2 female
+    expect(newAge.expects["mars"]).toBeCloseTo(19.13);
+  });
 });
