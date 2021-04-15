@@ -138,7 +138,14 @@ describe("Age", () => {
     newAge.region = "Americas";
     newAge.sex = "female";
     newAge.convertAll();
-    newAge.calcLifeExpectance(); // +6 Americas +2 female
+    newAge.calcLifeExpectance();
     expect(newAge.expects["mars"]).toBeCloseTo(19.13);
+  });
+
+  test("should determine the difference between current age and expectancy in Jupiter years", () => {
+    newAge.sex = "female";
+    newAge.convertAll();
+    newAge.calcLifeExpectance(); // 75 Earth years expect
+    expect(newAge.expects["jupiter"]).toBeCloseTo(2.53);
   });
 });
