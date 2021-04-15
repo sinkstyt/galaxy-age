@@ -14,8 +14,7 @@ export default class Age{
       "mercury": 1 / 87.969,
       "venus": 1 / 224.65,
       "mars": 1 / 687,
-      // "jupiter": 1 / (11.8618 * 365),
-      "jupiter": 1 / (1.8618 * 365),
+      "jupiter": 1 / (11.8618 * 365),
     },
     this.regionFactor = {
       "first world": 7,
