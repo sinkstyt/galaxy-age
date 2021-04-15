@@ -12,7 +12,8 @@ export default class Age{
     this.expects = {};
     this.conversionFactor = {
       "mercury": 1 / 87.969,
-      "venus": 1 / 224.65,
+      // "venus": 1 / 224.65,
+      "venus": 1 / 22.65,
       "mars": 1 / 687,
       "jupiter": 1 / (11.8618 * 365),
     },

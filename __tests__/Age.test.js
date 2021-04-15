@@ -33,7 +33,7 @@ describe("Age", () => {
     expect(wishfulThinker.convertAll()).toBe("please enter your age in years");
   });
 
-  test("should accurately convert to Mars years from Earth age", () => {
+  test("should accurately convert to Mercury years from Earth age", () => {
     newAge.convertAll();
     expect(newAge.mercury).toBeGreaterThan(186);
     expect(newAge.mercury).toBeLessThan(187);
@@ -126,5 +126,11 @@ describe("Age", () => {
     centenarian.convertAll();
     centenarian.calcLifeExpectance();
     expect(centenarian.expects["mercury"]).toBeCloseTo(-112.03);
+  });
+
+  test("should determine the difference between current age and expectancy in Venus years", () => {
+    newAge.convertAll();
+    newAge.calcLifeExpectance();
+    expect(newAge.expects["venus"]).toBeCloseTo(45.49);
   });
 });
