@@ -109,11 +109,12 @@ describe("Age", () => {
     expect(newAge.expectancies["mars"]).toBeLessThan(39);
   });
 
-//   test("should return the difference in Jupiter years between Jupiter life expectancy and current age in Jupiter years", () => {
-//     newAge.calcLifeExpectance();
-//     newAge.calcYearsLeft("jupiter");
-//     expect(newAge.jupiterLeft).toEqual(2.36);
-//   });
+  test("should accurately convert life expectancy to Jupiter years", () => {
+    newAge.region = "Africa";
+    newAge.calcLifeExpectance();
+    expect(newAge.expectancies["jupiter"]).toBeGreaterThan(5.31);
+    expect(newAge.expectancies["jupiter"]).toBeLessThan(5.35);
+  });
 
 //   test("should return a number that has more than two digits after its dot rounded to the nearest hundredth", () => {
 //     const roundedNum = newAge.roundToNearestHundredth(41.96549);
