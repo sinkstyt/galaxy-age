@@ -8,56 +8,32 @@
 <body>
   <div class="container">
     <div class="jumbotron">
-      <h1>Determine Your Age on other Solar System Planets</h1>
-      <h3 class="instructions">Instructions:</h3>
-      <ol class="instructions-list">
-        <li>enter current age in years</li>
-        <li>select the planet to which you're moving</li>
-        <li>click "Go"</li>
-        <li>optionally, provide some demographic information to get adjusted life expectancy</li>
-      </ol>
+      <h1>Determine Your Age on Other Planets</h1>
+      <div class="instructions-label">
+        <h2 class="instructions">Instructions:</h2>
+      </div>
+      <div>
+        <ol class="instructions-list">
+          <li>enter current age in years</li>
+          <li>optionally, provide some demographic information to get adjusted life expectancy</li>
+          <li>click "Go"</li>
+        </ol>
+      </div>
     </div>
     <div class="form-group">
-      <h2 class="planet-select">Select Planet</h2>
+      <h2 class="sub-heading" id="enter-age">Enter Age</h2>
       <small>the technology for conversion to Saturn, Uranus, and Neptune years has not yet been assembled here.</small>
-      <form class="planet-select">
+      <form class="input-age">
         <div class="current-years">
           <input type="number" min="13" max="129" name="earth-age" id="user-age-earth-years">
           <label for="user-age-earth-years">Current age (years)</label>
-        </div>
-        <div class="mercury-select">
-          <input type="radio" name="planet-choice" id="merc" checked>
-          <label for="merc">Mercury</label>
-        </div>
-        <div class="venus-select">
-          <input type="radio" name="planet-choice" id="venus">
-          <label for="venus">Venus</label>
-        </div>
-        <div class="mars-select">
-          <input type="radio" name="planet-choice" id="mars">
-          <label for="mars">Mars</label>
-        </div>
-        <div class="jupiter-select">
-          <input type="radio" name="planet-choice" id="jupi">
-          <label for="jupi">Jupiter</label>
-        </div>
-        <div class="saturn-select">
-          <input type="radio" name="planet-choice" id="saturn" disabled>
-          <label for="saturn">Saturn</label>
-        </div>
-        <div class="uranus-select">
-          <input type="radio" name="planet-choice" id="uran" disabled>
-          <label for="uran">Uranus</label>
-        </div>
-        <div class="neptune-select">
-          <input type="radio" name="planet-choice" id="nept" disabled>
-          <label for="nept">Neptune</label>
-        </div>
-        <div class="select-all">
-          <input type="radio" name="planet-choice" id="omni">
-          <label for="omni">Mercury, Venus, Mars, and Jupiter</label>
+          <span class="error-display"></span>
         </div>
         <h3 class="sub-heading">Demographic Information</h3>
+        <div class="form-check">
+          <input type="radio" name="region-pick" id="no-region" value="''">
+          <label for="no-region">I prefer not to specify my region.</label>
+        </div>
         <div class="form-check">
           <ul class="first-world-list">
             <li>any country in Europe</li>
@@ -78,7 +54,7 @@
             <li>United States</li>
             <li>Uruguay</li>
           </ul>
-          <input type="radio" name="region-pick" id="1st-world" checked>
+          <input type="radio" name="region-pick" id="1st-world" value="first world" checked>
           <label for="1st-world">I am from one of the above countries.</label>
         </div>
         <div class="form-check">
@@ -88,33 +64,37 @@
             <li>Central American country</li>
             <li>South American country, not Uruguay</li>
           </ul>
-          <input type="radio" name="region-pick" id="americas">
-          <label for="1st-world">I am from one of the above countries.</label>
+          <input type="radio" name="region-pick" id="americas" value="Americas">
+          <label for="americas">I am from one of the above countries.</label>
         </div>
         <div class="form-check">
-          <input type="radio" name="region-pick" id="africa">
+          <input type="radio" name="region-pick" id="africa" value="Africa">
           <label for="africa">I am from an African country.</label>
         </div>
-        <h3>Sex</h3>
+        <h3 class="sub-heading">Sex</h3>
         <div class="form-check sex-indicate">
-          <input type="radio" id="fem" checked>
+          <input type="radio" name="sex-input" id="not-indicated" value="no-answer" checked>
+          <label for="fem">no answer</label>
+        </div>
+        <div class="form-check sex-indicate">
+          <input type="radio" name="sex-input" id="fem" value="female">
           <label for="fem">female</label>
         </div>
         <div class="form-check sex-indicate">
-          <input type="radio" id="mal">
+          <input type="radio" name="sex-input" id="mal" value="male">
           <label for="mal">male</label>
         </div>
         <div class="buttons">
-          <button type="submit" class="btn btn-primary">Go</button>
+          <button type="submit" class="btn btn-success">Go</button>
         </div>
       </form>
     </div>
     <div class="results-output row">
       <div class="col-md-4">
         <h3>Current Age Conversions</h3>
-        <ul class="current-converted">
+        <div class="current-converted">
 
-        </ul>
+        </div>
       </div>
       <div class="col-md-4">
         <h3>Years You Can Expect to Live There</h3>
