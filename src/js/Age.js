@@ -9,10 +9,10 @@ export default class Age{
     this.region = '';
     this.lifeExpect = 73;
     this.yearsBeyond = 0;
-    this.expects = {};
     this.conversionFactor = {
       "mercury": 1 / 87.969,
       "venus": 1 / 224.65,
+      "earth": 1,
       "mars": 1 / 687,
       "jupiter": 1 / (11.8618 * 365),
     },
@@ -22,6 +22,7 @@ export default class Age{
       "Africa": -10
     };
     this.expectancies = {};
+    this.expects = {};
   }
 
   convertAll() {
