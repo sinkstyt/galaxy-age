@@ -33,13 +33,12 @@ describe("Age", () => {
     expect(wishfulThinker.convertAll()).toBe("please enter your age in years");
   });
 
-  test("should accurately convert to Mars years from Earth age", () => {
+  test("should accurately convert to Mercury years from Earth age", () => {
     newAge.convertAll();
     expect(newAge.mercury).toBeGreaterThan(186);
     expect(newAge.mercury).toBeLessThan(187);
   });
 
-  //        **********  use other matchers besides .toEqual ********
   test("should accurately convert to Venus years from Earth age", () => {
     newAge.convertAll();
     expect(newAge.venus).toBeGreaterThan(73);
@@ -58,70 +57,95 @@ describe("Age", () => {
     expect(newAge.jupiter).toBeLessThan(4);
   });
 
-//   test("should return the global average (mean) for years of life expected", () => {
-//     newAge.calcLifeExpectance();
-//     expect(newAge.lifeExpect).toEqual(73);
-//   });
+  test("should return the global mean life expectancy", () => {
+    expect(newAge.lifeExpect).toBeCloseTo(73);
+  });
 
-//   test("should return lifeExpect value increased by 7 when person is from first world country but NOT in the Americas", () => {
-//     newAge.region = "first world";
-//     newAge.calcLifeExpectance();
-//     expect(newAge.lifeExpect).toEqual(80);
-//   });
+  test("should return mean life expectancy unchanged if key `region` stores an empty string", () => {
+    newAge.calcLifeExpectance();
+    expect(newAge.lifeExpect).toBeCloseTo(73);
+  });
 
-//   test("should return lifeExpect value decreased by 10 when African country is indicated", () => {
-//     newAge.region = "Africa";
-//     newAge.calcLifeExpectance();
-//     expect(newAge.lifeExpect).toEqual(63);
-//   });
+  test("should return lifeExpect value increased by 7 when person is from first world country but NOT in the Americas", () => {
+    newAge.region = "first world";
+    newAge.calcLifeExpectance();
+    expect(newAge["first world"]).toEqual(80);
+  });
 
-//   test("should return lifeExpect value increased by 6 when country in the Americas is indicated", () => {
-//     newAge.region = "Americas";
-//     newAge.calcLifeExpectance();
-//     expect(newAge.lifeExpect).toEqual(79);
-//   });
+  test("should decrease lifeExpect by 10 when region equals Africa", () => {
+    newAge.region = "Africa";
+    newAge.calcLifeExpectance();
+    expect(newAge["Africa"]).toEqual(63);
+  });
 
-//   test("should return lifeExpect value increased by 2 when sex female is indicated", () => {
-//     newAge.region = "Americas";
-//     newAge.sex = "female";
-//     newAge.calcLifeExpectance();
-//     newAge.calcLifeExpectBySex();
-//     expect(newAge.lifeExpect).toEqual(81);
-//   });
+  test("should increase lifeExpect value by 6 when region equals Americas", () => {
+    newAge.region = "Americas";
+    newAge.calcLifeExpectance();
+    expect(newAge["Americas"]).toBe(79);
+  });
 
-//   test("should return the difference in Mercury years between Mercury life expectancy and current age in Mercury years", () => {
-//     newAge.calcYearsLeft(`mercury`);
-//     expect(newAge.mercuryLeft).toEqual(116.18);
-//   });
+  test("should increase lifeExpect by 2 when sex equals female", () => {
+    newAge.sex = "female";
+    newAge.calcLifeExpectance();
+    expect(newAge.lifeExpect).toBe(75);
+  });
 
-//   test("should return the difference in Venus years between Venus life expectancy and current age in Venus years", () => {
-//     newAge.calcLifeExpectance();
-//     newAge.calcYearsLeft("venus");
-//     expect(newAge.venusLeft).toEqual(45.5);
-//   });
+  test("should accurately convert life expectancy to Mercury years", () => {
+    newAge.sex = "female";
+    newAge.region = "Americas";
+    newAge.calcLifeExpectance();
+    expect(newAge.expectancies["mercury"]).toBeGreaterThan(336);
+    expect(newAge.expectancies["mercury"]).toBeLessThan(336.8);
+  });
+
+  test("should accurately convert life expectancy to Venus years", () => {
+    newAge.calcLifeExpectance();
+    expect(newAge.expectancies["venus"]).toBeCloseTo(118.61);
+  });
   
-//   test("should return the difference in Mars years between Mars life expectancy and current age in Mars years", () => {
-//     newAge.calcLifeExpectance();
-//     newAge.calcYearsLeft("mars");
-//     expect(newAge.marsLeft).toEqual(14.87);
-//   });
+  test("should accurately convert life expectancy to Mars years", () => {
+    newAge.calcLifeExpectance();
+    expect(newAge.expectancies["mars"]).toBeGreaterThan(38.5);
+    expect(newAge.expectancies["mars"]).toBeLessThan(39);
+  });
 
-//   test("should return the difference in Jupiter years between Jupiter life expectancy and current age in Jupiter years", () => {
-//     newAge.calcLifeExpectance();
-//     newAge.calcYearsLeft("jupiter");
-//     expect(newAge.jupiterLeft).toEqual(2.36);
-//   });
+  test("should accurately convert life expectancy to Jupiter years", () => {
+    newAge.region = "Africa";
+    newAge.calcLifeExpectance();
+    expect(newAge.expectancies["jupiter"]).toBeGreaterThan(5.31);
+    expect(newAge.expectancies["jupiter"]).toBeLessThan(5.35);
+  });
 
-//   test("should return a number that has more than two digits after its dot rounded to the nearest hundredth", () => {
-//     const roundedNum = newAge.roundToNearestHundredth(41.96549);
-//     expect(roundedNum).toEqual(41.97);
-//   });
+  test("should determine the difference between current age in Earth years and life expectancy and store at key `yearsBeyond`", () => {
+    centenarian.convertAll();
+    centenarian.calcLifeExpectance();
+    expect(centenarian.yearsBeyond).toBeCloseTo(-27);
+  });
 
-//   test("should return a positive number (the absolute value) of the difference between a planet's life expectancy and this same planet's current age", () => {
-//     centenarian = new Age(100);
-//     centenarian.calcLifeExpectance();
-//     centenarian.calcYearsLeft("jupiter");
-//     centenarian.outlasterCheck("jupiter");
-//     expect(centenarian.yearsBeyond).toEqual(2.28);
-//   });
+  test("should determine the difference between current Mercury years age and expectancy in Mercury years", () => {
+    centenarian.convertAll();
+    centenarian.calcLifeExpectance();
+    expect(centenarian.expects["mercury"]).toBeCloseTo(-112.03);
+  });
+
+  test("should determine the difference between current age and expectancy in Venus years", () => {
+    newAge.convertAll();
+    newAge.calcLifeExpectance();
+    expect(newAge.expects["venus"]).toBeCloseTo(45.49);
+  });
+
+  test("should determine the difference between current age and expectancy in Mars years", () => {
+    newAge.region = "Americas";
+    newAge.sex = "female";
+    newAge.convertAll();
+    newAge.calcLifeExpectance();
+    expect(newAge.expects["mars"]).toBeCloseTo(19.13);
+  });
+
+  test("should determine the difference between current age and expectancy in Jupiter years", () => {
+    newAge.sex = "female";
+    newAge.convertAll();
+    newAge.calcLifeExpectance(); // 75 Earth years expect
+    expect(newAge.expects["jupiter"]).toBeCloseTo(2.53);
+  });
 });

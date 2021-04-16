@@ -3,71 +3,106 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How old you would be on Mercury</title>
+  <title>Space Age Calculator</title>
 </head>
 <body>
   <div class="container">
-    <h1>Determine Your Age on other Solar System Planets</h1>
-    <h3 class="instructions">How to Try It:</h3>
-    <ol class="instructions-list">
-      <li>enter current age in years</li>
-      <li>select the planet to which you're moving</li>
-      <li>click "tell me my age"</li>
-      <li>optionally, provide some demographic data to see how many years left you might continue to flourish on another planet</li>
-    </ol>
-  </div>
-  <h2 class="planet-select">Select Planet</h2>
-  <small>Sorry, the technology for conversion to Saturn, Uranus, and Neptune years has not yet been assembled here.</small>
-  <form class="planet-select">
-    <div class="mercury-select">
-      <input type="radio" name="planet-choice" id="merc" checked>
-      <label for="merc">Mercury</label>
+    <div class="jumbotron">
+      <h1>Determine Your Age on Other Planets</h1>
+      <div class="instructions-label">
+        <h2 class="instructions">Instructions:</h2>
+      </div>
+      <div>
+        <ol class="instructions-list">
+          <li>enter current age in years</li>
+          <li>optionally, provide some demographic information to get adjusted life expectancy</li>
+          <li>click "Go"</li>
+        </ol>
+      </div>
     </div>
-    <div class="venus-select">
-      <input type="radio" name="planet-choice" id="venus">
-      <label for="venus">Venus</label>
+    <div class="form-group">
+      <h2 class="sub-heading" id="enter-age">Enter Age</h2>
+      <small>the technology for conversion to Saturn, Uranus, and Neptune years has not yet been assembled here.</small>
+      <form class="input-age">
+        <div class="current-years">
+          <input type="number" min="13" max="129" name="earth-age" id="user-age-earth-years">
+          <label for="user-age-earth-years">Current age (years)</label>
+          <span class="error-display"></span>
+        </div>
+        <h3 class="sub-heading">Demographic Information</h3>
+        <div class="form-check">
+          <input type="radio" name="region-pick" id="no-region" value="''">
+          <label for="no-region">I prefer not to specify my region.</label>
+        </div>
+        <div class="form-check">
+          <ul class="first-world-list">
+            <li>any country in Europe</li>
+            <li>Australia</li>
+            <li>Canada</li>
+            <li>China</li>
+            <li>Costa Rica</li>
+            <li>Cuba</li>
+            <li>Israel</li>
+            <li>Iran</li>
+            <li>Japan</li>
+            <li>Jordan</li>
+            <li>Kuwait</li>
+            <li>New Zealand</li>
+            <li>Qatar</li>
+            <li>Singapore</li>
+            <li>South Korea</li>
+            <li>United States</li>
+            <li>Uruguay</li>
+          </ul>
+          <input type="radio" name="region-pick" id="1st-world" value="first world" checked>
+          <label for="1st-world">I am from one of the above countries.</label>
+        </div>
+        <div class="form-check">
+          <ul class="americas">
+            <li>Mexico</li>
+            <li>Caribbean</li>
+            <li>Central American country</li>
+            <li>South American country, not Uruguay</li>
+          </ul>
+          <input type="radio" name="region-pick" id="americas" value="Americas">
+          <label for="americas">I am from one of the above countries.</label>
+        </div>
+        <div class="form-check">
+          <input type="radio" name="region-pick" id="africa" value="Africa">
+          <label for="africa">I am from an African country.</label>
+        </div>
+        <h3 class="sub-heading">Sex</h3>
+        <div class="form-check sex-indicate">
+          <input type="radio" name="sex-input" id="not-indicated" value="no-answer" checked>
+          <label for="fem">no answer</label>
+        </div>
+        <div class="form-check sex-indicate">
+          <input type="radio" name="sex-input" id="fem" value="female">
+          <label for="fem">female</label>
+        </div>
+        <div class="form-check sex-indicate">
+          <input type="radio" name="sex-input" id="mal" value="male">
+          <label for="mal">male</label>
+        </div>
+        <div class="buttons">
+          <button type="submit" class="btn btn-success">Go</button>
+        </div>
+      </form>
     </div>
-    <div class="mars-select">
-      <input type="radio" name="planet-choice" id="mars">
-      <label for="mars">Mars</label>
-    </div>
-    <div class="jupiter-select">
-      <input type="radio" name="planet-choice" id="jupi">
-      <label for="jupi">Jupiter</label>
-    </div>
-    <div class="saturn-select">
-      <input type="radio" name="planet-choice" id="saturn" disabled>
-      <label for="saturn">Saturn</label>
-    </div>
-    <div class="uranus-select">
-      <input type="radio" name="planet-choice" id="uran" disabled>
-      <label for="uran">Uranus</label>
-    </div>
-    <div class="neptune-select">
-      <input type="radio" name="planet-choice" id="nept" disabled>
-      <label for="nept">Neptune</label>
-    </div>
-    <div class="current-years">
-      <input type="text" name="earth-age" id="user-age-earth-years">
-      <label for="user-age-earth-years">Current age (years)</label>
-    </div>
-    <div class="buttons">
-      <button type="submit" class="btn btn-primary">Show My Adjusted Age</button>
-    </div>
-  </form>
-  <div class="results-output row">
-    <div class="col-md-4">
-      <h3>Current Age Conversions</h3>
-      <ul class="current-converted">
+    <div class="results-output row">
+      <div class="col-md-4">
+        <h3>Current Age Conversions</h3>
+        <div class="current-converted">
 
-      </ul>
-    </div>
-    <div class="col-md-4">
-      <h3>Years You Can Expect to Live There</h3>
-      <p>*If you have already lived beyond your converted life expectancy, the amount of years beyond this life expectancy will be shown.</p>
-      <ul class="years-left">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h3>Years You Can Expect to Live There</h3>
+        <p>*If you have already lived beyond your converted life expectancy, the amount of years beyond this life expectancy will be shown.</p>
+        <ul class="years-left">
 
-      </ul>
+        </ul>
+      </div>
     </div>
   </div>
 </body>
