@@ -28,3 +28,12 @@ ol {
   margin-top: 1rem;
   padding-left: 10%;
 }
+
+#enter-age {
+  margin-bottom: 0.1rem;
+}
+
+small {
+  padding-left: 1rem;
+  margin-bottom: 0.4rem;
+}
