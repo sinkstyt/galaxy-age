@@ -1,4 +1,30 @@
 body {
+  font-family: 'XCharter-Roman', 'Go-Mono', slab-serif, serif;
   background-color: maroon;
   color: ivory;
+}
+
+.container {
+  padding-right: 0;
+  margin-right: 0;
+}
+
+.jumbotron {
+  background-color: #212529;
+  border-radius: 0 0 0 45%;
+}
+
+.instructions-label {
+  margin-top: 1.4rem;
+}
+
+.instructions {
+  margin-left: 8%;
+  font-weight: 300;
+  font-style: italic;
+}
+
+ol {
+  margin-top: 1rem;
+  padding-left: 10%;
 }
