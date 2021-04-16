@@ -20,13 +20,11 @@ $('form').on("submit", function(event) {
   earthling.sex = sexInput;
   earthling.region = regionInput;
   earthling.calcLifeExpectance();
-  // this.yearsBeyond is assigned a non-zero once .calcLifeExpectance has been called. If this.yearsBeyond is negative, then these values indicate the person has lived x years longer than their calculated life expectancy.
   $("div.current-converted").prepend(buildCurrents(earthling));
 });
 
 function buildCurrents(personObj) {
   let tableAsString = `<table class="table"><thead><tr><th scope="col">Mercury</th><th scope="col">Venus</th><th scope="col">Mars</th><th scope="col">Jupiter</th></tr></thead><tbody><tr>`;
-  // iterate through EITHER 1) conversions of current ages OR 2) gaps between current age and expectancy, Which? determined by second argument
   let planetsLowercase = ["mercury", "venus", "mars", "jupiter"];
   for (const planet of planetsLowercase) {
     tableAsString += `<td>${personObj[planet]}</td>`;
